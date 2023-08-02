@@ -1,0 +1,4 @@
+rule link
+  command = ld.lld -n -s -z nognustack --gc-sections $in -o $out && llvm-strip --strip-sections $out
+
+build mini: link target/release/libmini.a
